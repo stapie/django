@@ -14,18 +14,20 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: Install Dependencies
+      working-directory: ./djangoprjt
       run: |
         pwd
         python3 -m pip install --upgrade pip
         pip install virtualenv
         virtualenv djangoprjt/
         python3 -m pip install django
-        echo ${PWD}
-        pip install -r ${PDW}djangoprjt/requirements.txt
+        pip install -r requirements.txt
     - name: Run Tests
+      working-directory: ./djangoprjt
       run: |
         pwd 
         python3 djangoprjt/manage.py migrate
     - name: Deploy
+      working-directory: ./djangoprjt
       run: | 
         python3 djangoprit/manage.py runserver 0.0.0.0:8000
