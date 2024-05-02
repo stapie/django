@@ -33,4 +33,4 @@ jobs:
     - name: Deploy
       working-directory: ./djangoprjt
       run: | 
-        python3 manage.py runserver 0.0.0.0:8000 &
+        screen -d -m python3 manage.py runserver 0.0.0.0:8000
