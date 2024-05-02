@@ -16,14 +16,14 @@ jobs:
     - name: Install Dependencies
       run: |
         pwd
-        python -m pip install --upgrade pip
+        python3 -m pip install --upgrade pip
         pip install virtualenv
-        python -m venv
-        python -m pip install django
+        python3 -m venv
+        python3 -m pip install django
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py migrate
+        python3 manage.py migrate
     - name: Deploy
       run: | 
-        screen -d -t python manage.py runserver 0.0.0.0:8000
+        screen -d -t python3 manage.py runserver 0.0.0.0:8000
