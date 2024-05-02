@@ -20,8 +20,8 @@ jobs:
         pip install virtualenv
         virtualenv djangoprjt/
         python3 -m pip install django
-        pwd
-        pip install -r djangoprjt/requirements.txt
+        echo ${PWD}
+        pip install -r ${PDW}djangoprjt/requirements.txt
     - name: Run Tests
       run: |
         pwd 
