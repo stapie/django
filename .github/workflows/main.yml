@@ -21,13 +21,11 @@ jobs:
         virtualenv djangoprjt/
         python3 -m pip install django
         pwd
-        cd djangoprjt
-        pip install -r requirements.txt
+        pip install -r djangoprjt/requirements.txt
     - name: Run Tests
       run: |
         pwd 
-        cd djangoprjt
-        python3 manage.py migrate
+        python3 djangoprjt/manage.py migrate
     - name: Deploy
       run: | 
-        screen -d -m python3 djangoprit/manage.py runserver 0.0.0.0:8000
+        python3 djangoprit/manage.py runserver 0.0.0.0:8000
