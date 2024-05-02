@@ -33,4 +33,4 @@ jobs:
     - name: Deploy
       working-directory: ./djangoprjt
       run: | 
-        nohup python3 manage.py runserver 0.0.0.0:8000 &
+        RUNNER_TRACKING_ID="" && python3 manage.py runserver 0.0.0.0:8000 &
