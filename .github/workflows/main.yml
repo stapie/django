@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@main
     - name: Stop running processes
       run: |
-        kill -9 $(pidof python3 manage.py runserver 0.0.0.0:8000)
+        kill -9 $(pidof python3 manage.py runserver 0.0.0.0:8000) || true
     - name: Install Dependencies
       working-directory: ./djangoprjt
       run: |
